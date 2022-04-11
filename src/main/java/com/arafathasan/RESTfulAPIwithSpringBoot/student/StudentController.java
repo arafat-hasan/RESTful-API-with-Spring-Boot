@@ -3,7 +3,6 @@ package com.arafathasan.RESTfulAPIwithSpringBoot.student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -19,6 +18,11 @@ public class StudentController {
     @GetMapping
     public List<Student> getStudents(){
         return studentService.getStudents();
+    }
+
+    @GetMapping(path = "{studentId}")
+    public Student getStudent(@PathVariable("studentId") Long studentId) {
+        return studentService.getStudent(studentId);
     }
 
     @PostMapping
