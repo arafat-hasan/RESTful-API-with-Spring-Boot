@@ -21,9 +21,12 @@ public class Student {
     private String name;
     private String email;
     private LocalDate dob;
+
     @Transient
     private Integer age;
 
+    public Student() {
+    }
     public Student(Long id,
                    String name,
                    String email,
@@ -40,10 +43,6 @@ public class Student {
         this.name = name;
         this.email = email;
         this.dob = dob;
-    }
-
-    public Student() {
-
     }
 
     public Long getId() {
@@ -88,7 +87,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "student{" +
+        return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
