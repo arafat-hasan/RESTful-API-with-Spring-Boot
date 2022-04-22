@@ -21,9 +21,10 @@ public class Student {
     private String name;
     private String email;
     private LocalDate dob;
-
     @Transient
     private Integer age;
+
+    private String address;
 
     public Student() {
     }
